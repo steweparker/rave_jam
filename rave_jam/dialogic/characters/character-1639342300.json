@@ -1,0 +1,20 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1639342300.json",
+	"mirror_portraits": true,
+	"name": "Сер Котофей",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 350,
+	"offset_y": -100,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Sprites/cat1.png"
+		}
+	],
+	"scale": 100
+}

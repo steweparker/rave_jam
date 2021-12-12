@@ -1,0 +1,20 @@
+{
+	"color": "#ffdedf17",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1639342322.json",
+	"mirror_portraits": true,
+	"name": "Лорд Матрос",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -350,
+	"offset_y": -100,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Sprites/cat2.png"
+		}
+	],
+	"scale": 100
+}

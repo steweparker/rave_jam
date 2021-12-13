@@ -22,3 +22,4 @@ func _on_sleepwalker_area_entered(area):
 func _on_start():
 	# fadein from black modulation animation
 	active = true
+	$AnimationPlayer.play("walk")

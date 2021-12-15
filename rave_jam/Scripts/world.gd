@@ -32,6 +32,7 @@ func _on_start_dialog_end(timeline):
 
 
 func _on_Button_pressed():
+	
 	start_button.visible = false
 	$ScoreTimer.start()
 	emit_signal("start_run")
@@ -53,3 +54,10 @@ func _game_stop():
 	if get_score() > Autoload.get_highscore():
 		high_score_label.text = str(get_score())
 	print_debug("Stop!")
+
+
+func _on_camera_follow_area_entered(area):
+	var offset_ = $Camera2D.position.x - $sleepwalker.position.x
+	$Camera2D.set_player_offset(offset_)
+	$Camera2D.active = true
+	$camera_follow.queue_free()

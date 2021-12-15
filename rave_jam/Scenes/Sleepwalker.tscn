@@ -31,13 +31,6 @@ texture = ExtResource( 1 )
 hframes = 9
 frame = 4
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-offset_h = 1.0
-offset_v = -1.0
-drag_margin_left = 0.39
-drag_margin_bottom = 0.28
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 

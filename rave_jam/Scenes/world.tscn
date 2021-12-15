@@ -1,21 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Sleepwalker.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/MainHome.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/world.gd" type="Script" id=3]
 [ext_resource path="res://Fifaks.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/main_room/fense_top.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/main_room/fense_bottom.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="world" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="sleepwalker" parent="." instance=ExtResource( 1 )]
-position = Vector2( 28, 152 )
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -17.0
+margin_top = -1.0
+margin_right = 1637.0
+margin_bottom = 257.0
+mouse_filter = 2
+color = Color( 0.0196078, 0.0117647, 0.0627451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="block" parent="." instance=ExtResource( 2 )]
-position = Vector2( 431, 158 )
-
-[node name="block2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 560, 156 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 165, 111 )
+current = true
+script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -88,5 +100,26 @@ __meta__ = {
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
+[node name="fense" type="Sprite" parent="."]
+position = Vector2( 321, 148 )
+texture = ExtResource( 6 )
+
+[node name="MainHome" parent="." instance=ExtResource( 2 )]
+position = Vector2( 143, 110 )
+
+[node name="sleepwalker" parent="." instance=ExtResource( 1 )]
+position = Vector2( -18, 152 )
+
+[node name="fense_home_bottom" type="Sprite" parent="."]
+position = Vector2( 432, 205 )
+texture = ExtResource( 7 )
+
+[node name="camera_follow" type="Area2D" parent="."]
+position = Vector2( 87, 172 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_follow"]
+shape = SubResource( 1 )
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="area_entered" from="camera_follow" to="." method="_on_camera_follow_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/Sleepwalker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MainHome.tscn" type="PackedScene" id=2]
@@ -14,17 +14,107 @@
 [ext_resource path="res://Sprites/house2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/house3.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/crossroad.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/dove.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/dog.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/roadlight.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/roadlights_button.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/bush.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/par/moon.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/par/bush.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/par/close_trees.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/par/far_trees.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/par/mid_trees.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/start_button1.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/restart_button1.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/restart_button2.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/start_button3.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/start_button2.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/restart_button3.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/bird_spawner.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Sprites/main_room/wall_front.png" type="Texture" id=32]
+[ext_resource path="res://Sounds/ding2.mp3" type="AudioStream" id=33]
+[ext_resource path="res://Sounds/night_city.mp3" type="AudioStream" id=34]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("black_screen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("black_screen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("black_screen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("black_screen:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="world" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -17.0
-margin_top = -1.0
+margin_left = -13.0
+margin_top = 157.0
 margin_right = 2238.0
 margin_bottom = 257.0
+mouse_filter = 2
+color = Color( 0.0196078, 0.0117647, 0.0627451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -5.0
+margin_top = 105.0
+margin_right = 2246.0
+margin_bottom = 197.0
+rect_scale = Vector2( 0.0116083, 1.02287 )
 mouse_filter = 2
 color = Color( 0.0196078, 0.0117647, 0.0627451, 1 )
 __meta__ = {
@@ -38,18 +128,44 @@ script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.619608 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart_ui" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart_button" type="TextureButton" parent="CanvasLayer/restart_ui"]
+margin_left = 118.0
+margin_top = 75.0
+margin_right = 194.0
+margin_bottom = 127.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 30 )
+texture_hover = ExtResource( 27 )
+
+[node name="Button" type="TextureButton" parent="CanvasLayer"]
 visible = false
 margin_left = 110.0
 margin_top = 78.0
 margin_right = 199.0
 margin_bottom = 129.0
-text = "Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 29 )
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+visible = false
 margin_right = 320.0
 margin_bottom = 15.0
 __meta__ = {
@@ -105,19 +221,67 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreTimer" type="Timer" parent="."]
-
-[node name="Moon" type="Node2D" parent="."]
-position = Vector2( -196, 25 )
-
-[node name="ColorRect" type="ColorRect" parent="Moon"]
-margin_left = 372.0
-margin_top = 56.0
-margin_right = 398.0
-margin_bottom = 81.0
+[node name="black_screen" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxMoon" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 90 )
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxMoon"]
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 320, 360 )
+
+[node name="ParallaxBush" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 110 )
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxBush"]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 320, 360 )
+
+[node name="ParallaxFarTrees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 90 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxFarTrees"]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 320, 360 )
+
+[node name="ParallaxMidTrees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 90 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxMidTrees"]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 320, 360 )
+
+[node name="ParallaxCloseTrees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 90 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxCloseTrees"]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 320, 360 )
 
 [node name="houses" type="Node2D" parent="."]
 
@@ -143,6 +307,68 @@ position = Vector2( 1741, 27 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 11 )
 
+[node name="grass" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="grass"]
+position = Vector2( 434, 145 )
+scale = Vector2( 1.18003, 0.636442 )
+texture = ExtResource( 19 )
+
+[node name="Sprite2" type="Sprite" parent="grass"]
+position = Vector2( 673, 147 )
+scale = Vector2( 0.720566, 0.822238 )
+texture = ExtResource( 19 )
+
+[node name="Sprite3" type="Sprite" parent="grass"]
+position = Vector2( 734, 149 )
+scale = Vector2( -0.710653, 0.57348 )
+texture = ExtResource( 19 )
+
+[node name="Sprite4" type="Sprite" parent="grass"]
+position = Vector2( 803, 150 )
+scale = Vector2( 0.929347, 0.773478 )
+texture = ExtResource( 19 )
+
+[node name="Sprite5" type="Sprite" parent="grass"]
+position = Vector2( 960.522, 144.623 )
+scale = Vector2( 1.18003, 0.636442 )
+texture = ExtResource( 19 )
+
+[node name="Sprite6" type="Sprite" parent="grass"]
+position = Vector2( 1098, 147 )
+scale = Vector2( 0.720566, 0.822238 )
+texture = ExtResource( 19 )
+
+[node name="Sprite7" type="Sprite" parent="grass"]
+position = Vector2( 1228, 150 )
+scale = Vector2( -0.710653, 0.57348 )
+texture = ExtResource( 19 )
+
+[node name="Sprite8" type="Sprite" parent="grass"]
+position = Vector2( 1345, 154 )
+scale = Vector2( 0.929347, 0.773478 )
+texture = ExtResource( 19 )
+
+[node name="Sprite9" type="Sprite" parent="grass"]
+position = Vector2( 1667.52, 144.246 )
+scale = Vector2( 1.18003, 0.636442 )
+texture = ExtResource( 19 )
+
+[node name="Sprite10" type="Sprite" parent="grass"]
+position = Vector2( 1795, 161 )
+scale = Vector2( 0.720566, 0.822238 )
+texture = ExtResource( 19 )
+
+[node name="Sprite11" type="Sprite" parent="grass"]
+position = Vector2( 2002, 145 )
+scale = Vector2( -0.710653, 0.57348 )
+texture = ExtResource( 19 )
+
+[node name="Sprite12" type="Sprite" parent="grass"]
+position = Vector2( 1919, 141 )
+scale = Vector2( 0.929347, 0.773478 )
+texture = ExtResource( 19 )
+
 [node name="fense2" type="Node2D" parent="."]
 position = Vector2( 143, 110 )
 
@@ -160,6 +386,10 @@ texture = ExtResource( 9 )
 
 [node name="Sprite4" type="Sprite" parent="fense2"]
 position = Vector2( 1674, -84 )
+texture = ExtResource( 9 )
+
+[node name="Sprite5" type="Sprite" parent="fense2"]
+position = Vector2( 1993, -84 )
 texture = ExtResource( 9 )
 
 [node name="crossroads" type="Node2D" parent="."]
@@ -195,6 +425,16 @@ texture = ExtResource( 8 )
 position = Vector2( 1803, 38 )
 texture = ExtResource( 8 )
 
+[node name="Sprite5" type="Sprite" parent="road"]
+position = Vector2( 2122, 38 )
+texture = ExtResource( 8 )
+
+[node name="roadlights_button" parent="." instance=ExtResource( 18 )]
+margin_left = 1387.0
+margin_top = 143.0
+margin_right = 1400.0
+margin_bottom = 166.0
+
 [node name="sleepwalker" parent="." instance=ExtResource( 1 )]
 position = Vector2( -18, 152 )
 
@@ -206,8 +446,88 @@ texture = ExtResource( 7 )
 position = Vector2( 87, 172 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_follow"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
+[node name="finish_zone" type="Area2D" parent="." groups=[
+"finish",
+]]
+position = Vector2( 1871, 179 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish_zone"]
+shape = SubResource( 4 )
+
+[node name="obstacles" type="Node2D" parent="."]
+
+[node name="dove" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 500, 171 )
+
+[node name="dove2" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 692, 124 )
+
+[node name="dove3" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 820, 173 )
+
+[node name="dove4" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 968, 171 )
+
+[node name="dove5" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1011, 124 )
+
+[node name="dove6" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1049, 138 )
+
+[node name="dove7" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1280, 137 )
+
+[node name="dove8" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1199, 172 )
+
+[node name="dove9" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1652, 138 )
+
+[node name="dove10" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1702, 48 )
+
+[node name="dove11" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1796, 90 )
+
+[node name="dove12" parent="obstacles" instance=ExtResource( 15 )]
+position = Vector2( 1732, 90 )
+
+[node name="dog" parent="obstacles" instance=ExtResource( 16 )]
+position = Vector2( 629, 135 )
+
+[node name="dog2" parent="obstacles" instance=ExtResource( 16 )]
+position = Vector2( 933, 135 )
+
+[node name="dog3" parent="obstacles" instance=ExtResource( 16 )]
+position = Vector2( 1761, 135 )
+
+[node name="roadlight" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1546, 241 )
+
+[node name="front_wall" type="Sprite" parent="."]
+position = Vector2( 291, 114 )
+texture = ExtResource( 32 )
+
+[node name="bird_spawner" parent="." instance=ExtResource( 31 )]
+position = Vector2( 370, 181 )
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="audio_ding" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 33 )
+volume_db = -10.0
+
+[node name="city_sound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 34 )
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/restart_ui/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/CanvasAnimationPlayer" to="." method="_on_CanvasAnimationPlayer_animation_finished"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="pressed" from="roadlights_button" to="." method="_on_roadlights_button_pressed"]
 [connection signal="area_entered" from="camera_follow" to="." method="_on_camera_follow_area_entered"]
+[connection signal="area_entered" from="finish_zone" to="." method="_on_finish_zone_area_entered"]

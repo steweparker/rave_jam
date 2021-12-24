@@ -29,28 +29,120 @@
 			}
 		},
 		{
-			"character": "character-1639342300.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Шо там? Колбаску сегодня получилось утащить?"
-		},
-		{
-			"character": "character-1639342322.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Почти. Но наш лунатик опять меня в холодильнике поймал. "
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat_2_2.mp3",
+			"volume": 0
 		},
 		{
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Нужно как-то его из дома выпровадить"
+			"text": "Наш человек спрятал всю колбасу в холодильнике"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat_2_3.mp3",
+			"volume": 0
 		},
 		{
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Нужно попробовать"
+			"text": "Ты пробовал её достать?"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat_2_2.mp3",
+			"volume": 0
+		},
+		{
+			"character": "character-1639342300.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Да, но этот лунатик встаёт от каждого шороха, стукается в дверь и просыпается"
+		},
+		{
+			"character": "character-1639342300.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Достать колбаску незамеченными не получится..."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat_2_1.mp3",
+			"volume": 0
+		},
+		{
+			"character": "character-1639342322.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "А что если он не стукнется в дверь?"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat-1.mp3",
+			"volume": 0
+		},
+		{
+			"character": "character-1639342300.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Что ты имеешь в виду?"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat_2_1.mp3",
+			"volume": 0
+		},
+		{
+			"character": "character-1639342322.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Что если мы откроем дверь и поможем ему прогуляться куда-подальше?"
+		},
+		{
+			"character": "character-1639342322.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Тогда у нас будет достаточно времени "
+		},
+		{
+			"character": "character-1639342322.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "чтобы насладиться безупречным вкусом сырокопченой колбаски"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Sounds/cat-1.mp3",
+			"volume": 0
+		},
+		{
+			"character": "character-1639342300.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Хе-хе-хе, можно попробовать... Ой, кажется он поднялся"
 		},
 		{
 			"emit_signal": "dialog_end",

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/doves_1.mp3-d0137685ac4a99684c0ec7a0322a8d88.mp3str"
+
+[deps]
+
+source_file="res://Sounds/doves_1.mp3"
+dest_files=[ "res://.import/doves_1.mp3-d0137685ac4a99684c0ec7a0322a8d88.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

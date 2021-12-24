@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blip.mp3-ddb3445457ae9e2d4284f2f14229c580.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Blip.mp3"
+dest_files=[ "res://.import/Blip.mp3-ddb3445457ae9e2d4284f2f14229c580.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

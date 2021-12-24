@@ -14,7 +14,7 @@
 			},
 			"metadata": {
 				"color": null,
-				"folded": false
+				"folded": true
 			}
 		},
 		"Definitions": {
@@ -45,7 +45,8 @@
 		"Timelines": {
 			"files": [
 				"timeline-1639342482.json",
-				"timeline-1639342856.json"
+				"timeline-1639342856.json",
+				"timeline-1639856383.json"
 			],
 			"folders": {
 

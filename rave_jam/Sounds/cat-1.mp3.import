@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cat-1.mp3-8651a60e8795bc2cc63883276e719bba.mp3str"
+
+[deps]
+
+source_file="res://Sounds/cat-1.mp3"
+dest_files=[ "res://.import/cat-1.mp3-8651a60e8795bc2cc63883276e719bba.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

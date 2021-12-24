@@ -16,10 +16,15 @@ func _process(delta):
 		
 func _on_sleepwalker_area_entered(area):
 	if area.is_in_group("block"):
+		$AnimationPlayer.play("wake")
 		active = false
 		emit_signal("wake_up")
+		
 
 func _on_start():
 	# fadein from black modulation animation
 	active = true
 	$AnimationPlayer.play("walk")
+	
+func disable_collision():
+	$CollisionShape2D.disabled = true

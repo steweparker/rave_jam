@@ -51,11 +51,13 @@ _global_script_class_icons={
 [application]
 
 config/name="rave_jam"
+run/main_scene="res://Scenes/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Autoload="*res://Scripts/autoload.gd"
+Jazz="*res://Scenes/jazz.tscn"
 
 [display]
 
@@ -91,6 +93,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+mp3={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]

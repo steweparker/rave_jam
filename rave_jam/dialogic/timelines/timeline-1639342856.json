@@ -1,24 +1,34 @@
 {
 	"events": [
 		{
-			"action": "join",
-			"character": "character-1639342826.json",
-			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			}
-		},
-		{
-			"character": "character-1639342826.json",
+			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "что здесь происходит?"
+			"text": "И он шёл и шёл, "
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "преодолевая закрытые ворота, перекрёстки, шлагбаумы"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "нападения птиц, крыс, собак"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "и множество других преград, которые автор не успел добавить в игру"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Спасибо за ваше время. "
 		}
 	],
 	"metadata": {

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/door-1.mp3-b6309d09e5a5f52e899374edc3992c4a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/door-1.mp3"
+dest_files=[ "res://.import/door-1.mp3-b6309d09e5a5f52e899374edc3992c4a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -4,16 +4,16 @@
 	"display_name": "",
 	"display_name_bool": false,
 	"id": "character-1639342322.json",
-	"mirror_portraits": true,
+	"mirror_portraits": false,
 	"name": "Лорд Матрос",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": -350,
-	"offset_y": -100,
+	"offset_y": -80,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Sprites/cat2.png"
+			"path": "res://Sprites/cat_2.png"
 		}
 	],
 	"scale": 100

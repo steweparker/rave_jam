@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/growl-dog.mp3-2cf9d27a0036ce9fbaae3ee363347939.mp3str"
+
+[deps]
+
+source_file="res://Sounds/growl-dog.mp3"
+dest_files=[ "res://.import/growl-dog.mp3-2cf9d27a0036ce9fbaae3ee363347939.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

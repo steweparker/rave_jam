@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Title.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/title.png" type="Texture" id=2]
+[ext_resource path="res://Fifaks.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
 
 [node name="Title" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,3 +19,18 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="set_locale" type="Button" parent="CanvasLayer"]
+margin_left = 13.0
+margin_top = 25.0
+margin_right = 25.0
+margin_bottom = 45.0
+theme = SubResource( 1 )
+toggle_mode = true
+text = "en"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="CanvasLayer/TextureRect" to="." method="_on_TextureRect_gui_input"]
+[connection signal="toggled" from="CanvasLayer/set_locale" to="." method="_on_set_locale_toggled"]

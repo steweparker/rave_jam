@@ -40,7 +40,7 @@
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Наш человек спрятал всю колбасу в холодильнике"
+			"text": "START1"
 		},
 		{
 			"audio": "play",
@@ -54,7 +54,7 @@
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ты пробовал её достать?"
+			"text": "START2"
 		},
 		{
 			"audio": "play",
@@ -68,13 +68,13 @@
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Да, но этот лунатик встаёт от каждого шороха, стукается в дверь и просыпается"
+			"text": "START3"
 		},
 		{
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Достать колбаску незамеченными не получится..."
+			"text": "START4"
 		},
 		{
 			"audio": "play",
@@ -88,7 +88,7 @@
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "А что если он не стукнется в дверь?"
+			"text": "START5"
 		},
 		{
 			"audio": "play",
@@ -102,7 +102,7 @@
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Что ты имеешь в виду?"
+			"text": "START6"
 		},
 		{
 			"audio": "play",
@@ -116,19 +116,19 @@
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Что если мы откроем дверь и поможем ему прогуляться куда-подальше?"
+			"text": "START7"
 		},
 		{
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Тогда у нас будет достаточно времени "
+			"text": "START8"
 		},
 		{
 			"character": "character-1639342322.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "чтобы насладиться безупречным вкусом сырокопченой колбаски"
+			"text": "START9"
 		},
 		{
 			"audio": "play",
@@ -142,7 +142,7 @@
 			"character": "character-1639342300.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Хе-хе-хе, можно попробовать... Ой, кажется он поднялся"
+			"text": "START10"
 		},
 		{
 			"emit_signal": "dialog_end",

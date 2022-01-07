@@ -4,13 +4,13 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Помогите лунатику убраться как-можно дальше"
+			"text": "HELP1"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Устраняйте препятсятвия на пути (просто жмакайте на них)"
+			"text": "HELP2"
 		}
 	],
 	"metadata": {

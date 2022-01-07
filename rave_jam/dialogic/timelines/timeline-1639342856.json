@@ -4,31 +4,31 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "И он шёл и шёл, "
+			"text": "FINISH1"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "преодолевая закрытые ворота, перекрёстки, шлагбаумы"
+			"text": "FINISH2"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "нападения птиц, крыс, собак"
+			"text": "FINISH3"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "и множество других преград, которые автор не успел добавить в игру"
+			"text": "FINISH4"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Спасибо за ваше время. "
+			"text": "FINISH5"
 		}
 	],
 	"metadata": {
